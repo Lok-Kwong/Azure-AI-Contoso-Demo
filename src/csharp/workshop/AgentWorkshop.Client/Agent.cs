@@ -5,7 +5,7 @@ using System.Text.Json;
 
 namespace AgentWorkshop.Client;
 
-public abstract class Lab(AIProjectClient client, string modelName) : IAsyncDisposable
+public abstract class AIAgent(AIProjectClient client, string modelName) : IAsyncDisposable
 {
     protected static readonly string SharedPath = Path.Combine(Environment.CurrentDirectory, "..", "..", "..", "..", "..", "..", "shared");
     protected readonly SalesData SalesData = new(SharedPath);

@@ -3,12 +3,12 @@
 echo "Deploying the Azure resources..."
 
 # Define resource group parameters
-RG_NAME="rg-agent-workshop"
+RG_NAME="AI-Foundry-Test"
 RG_LOCATION="eastus"
 MODEL_NAME="gpt-4o"
 AI_HUB_NAME="agent-wksp"
 AI_PROJECT_NAME="agent-workshop"
-AI_PROJECT_FRIENDLY_NAME="Agent-Service-Workshop"
+AI_PROJECT_FRIENDLY_NAME="Agent-Service-Workshop-demo"
 STORAGE_NAME="agentservicestorage"
 AI_SERVICES_NAME="agent-workshop"
 MODEL_CAPACITY=140
@@ -34,9 +34,12 @@ if [ -f output.json ]; then
   AI_PROJECT_NAME=$(jq -r '.properties.outputs.aiProjectName.value' output.json)
   RESOURCE_GROUP_NAME=$(jq -r '.properties.outputs.resourceGroupName.value' output.json)
   SUBSCRIPTION_ID=$(jq -r '.properties.outputs.subscriptionId.value' output.json)
+  echo "Getting Discovery URL from the Azure resources..."
 
   # Run the Azure CLI command to get discovery_url
   DISCOVERY_URL=$(az ml workspace show -n "$AI_PROJECT_NAME" --resource-group "$RESOURCE_GROUP_NAME" --query discovery_url -o tsv)
+
+  echo "$DISCOVERY_URL"
 
   if [ -n "$DISCOVERY_URL" ]; then
     # Process the discovery_url to extract the HostName
@@ -44,6 +47,7 @@ if [ -f output.json ]; then
 
     # Generate the PROJECT_CONNECTION_STRING
     PROJECT_CONNECTION_STRING="\"$HOST_NAME;$SUBSCRIPTION_ID;$RESOURCE_GROUP_NAME;$AI_PROJECT_NAME\""
+    echo "$PROJECT_CONNECTION_STRING"
 
     ENV_FILE_PATH="../src/python/workshop/.env"
 
@@ -64,7 +68,7 @@ if [ -f output.json ]; then
     dotnet user-secrets set "Azure:ModelName" "$MODEL_NAME" --project "$CSHARP_PROJECT_PATH"
 
     # Delete the output.json file
-    rm -f output.json
+    #rm -f output.json
   else
     echo "Error: discovery_url not found."
   fi
