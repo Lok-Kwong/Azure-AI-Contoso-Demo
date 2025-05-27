@@ -1,0 +1,201 @@
+{
+  "id": "/subscriptions/2765e54d-c903-4384-94fb-dc31b315d772/resourceGroups/AI-Foundry-Test/providers/Microsoft.Resources/deployments/main",
+  "location": null,
+  "name": "main",
+  "properties": {
+    "correlationId": "99581030-50fc-4700-b9f4-fcd69d8c3ce7",
+    "debugSetting": null,
+    "dependencies": [
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/2765e54d-c903-4384-94fb-dc31b315d772/resourceGroups/AI-Foundry-Test/providers/Microsoft.Resources/deployments/dependencies-agent-wksp-wfta-deployment",
+            "resourceGroup": "AI-Foundry-Test",
+            "resourceName": "dependencies-agent-wksp-wfta-deployment",
+            "resourceType": "Microsoft.Resources/deployments"
+          },
+          {
+            "apiVersion": "2022-09-01",
+            "id": "/subscriptions/2765e54d-c903-4384-94fb-dc31b315d772/resourceGroups/AI-Foundry-Test/providers/Microsoft.Resources/deployments/dependencies-agent-wksp-wfta-deployment",
+            "resourceGroup": "AI-Foundry-Test",
+            "resourceName": "dependencies-agent-wksp-wfta-deployment",
+            "resourceType": "Microsoft.Resources/deployments"
+          }
+        ],
+        "id": "/subscriptions/2765e54d-c903-4384-94fb-dc31b315d772/resourceGroups/AI-Foundry-Test/providers/Microsoft.Resources/deployments/ai-agent-wksp-wfta-deployment",
+        "resourceGroup": "AI-Foundry-Test",
+        "resourceName": "ai-agent-wksp-wfta-deployment",
+        "resourceType": "Microsoft.Resources/deployments"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/2765e54d-c903-4384-94fb-dc31b315d772/resourceGroups/AI-Foundry-Test/providers/Microsoft.Resources/deployments/ai-agent-wksp-wfta-deployment",
+            "resourceGroup": "AI-Foundry-Test",
+            "resourceName": "ai-agent-wksp-wfta-deployment",
+            "resourceType": "Microsoft.Resources/deployments"
+          },
+          {
+            "apiVersion": "2022-09-01",
+            "id": "/subscriptions/2765e54d-c903-4384-94fb-dc31b315d772/resourceGroups/AI-Foundry-Test/providers/Microsoft.Resources/deployments/ai-agent-wksp-wfta-deployment",
+            "resourceGroup": "AI-Foundry-Test",
+            "resourceName": "ai-agent-wksp-wfta-deployment",
+            "resourceType": "Microsoft.Resources/deployments"
+          }
+        ],
+        "id": "/subscriptions/2765e54d-c903-4384-94fb-dc31b315d772/resourceGroups/AI-Foundry-Test/providers/Microsoft.Resources/deployments/ai-agent-workshop-wfta-deployment",
+        "resourceGroup": "AI-Foundry-Test",
+        "resourceName": "ai-agent-workshop-wfta-deployment",
+        "resourceType": "Microsoft.Resources/deployments"
+      }
+    ],
+    "duration": "PT2M12.3805212S",
+    "error": null,
+    "mode": "Incremental",
+    "onErrorDeployment": null,
+    "outputResources": [
+      {
+        "id": "/subscriptions/2765e54d-c903-4384-94fb-dc31b315d772/resourceGroups/AI-Foundry-Test/providers/Microsoft.CognitiveServices/accounts/agent-workshop-wfta",
+        "resourceGroup": "AI-Foundry-Test"
+      },
+      {
+        "id": "/subscriptions/2765e54d-c903-4384-94fb-dc31b315d772/resourceGroups/AI-Foundry-Test/providers/Microsoft.CognitiveServices/accounts/agent-workshop-wfta/deployments/gpt-4o",
+        "resourceGroup": "AI-Foundry-Test"
+      },
+      {
+        "id": "/subscriptions/2765e54d-c903-4384-94fb-dc31b315d772/resourceGroups/AI-Foundry-Test/providers/Microsoft.MachineLearningServices/workspaces/ai-agent-wksp-wfta",
+        "resourceGroup": "AI-Foundry-Test"
+      },
+      {
+        "id": "/subscriptions/2765e54d-c903-4384-94fb-dc31b315d772/resourceGroups/AI-Foundry-Test/providers/Microsoft.MachineLearningServices/workspaces/ai-agent-wksp-wfta/connections/ai-agent-wksp-wfta-connection-AIServices",
+        "resourceGroup": "AI-Foundry-Test"
+      },
+      {
+        "id": "/subscriptions/2765e54d-c903-4384-94fb-dc31b315d772/resourceGroups/AI-Foundry-Test/providers/Microsoft.MachineLearningServices/workspaces/ai-agent-workshop-wfta",
+        "resourceGroup": "AI-Foundry-Test"
+      },
+      {
+        "id": "/subscriptions/2765e54d-c903-4384-94fb-dc31b315d772/resourceGroups/AI-Foundry-Test/providers/Microsoft.Storage/storageAccounts/agentservicestoragewfta",
+        "resourceGroup": "AI-Foundry-Test"
+      }
+    ],
+    "outputs": {
+      "aiProjectName": {
+        "type": "String",
+        "value": "ai-agent-workshop-wfta"
+      },
+      "resourceGroupName": {
+        "type": "String",
+        "value": "AI-Foundry-Test"
+      },
+      "subscriptionId": {
+        "type": "String",
+        "value": "2765e54d-c903-4384-94fb-dc31b315d772"
+      }
+    },
+    "parameters": {
+      "aiHubDescription": {
+        "type": "String",
+        "value": "A standard hub resource required for the agent setup."
+      },
+      "aiHubFriendlyName": {
+        "type": "String",
+        "value": "Agents standard hub resource"
+      },
+      "aiHubName": {
+        "type": "String",
+        "value": "agent-wksp"
+      },
+      "aiProjectDescription": {
+        "type": "String",
+        "value": "A standard project resource required for the agent setup."
+      },
+      "aiProjectFriendlyName": {
+        "type": "String",
+        "value": "Agent-Service-Workshop-demo"
+      },
+      "aiProjectName": {
+        "type": "String",
+        "value": "agent-workshop"
+      },
+      "aiServicesName": {
+        "type": "String",
+        "value": "agent-workshop"
+      },
+      "deploymentTimestamp": {
+        "type": "String",
+        "value": "20250527190547"
+      },
+      "location": {
+        "type": "String",
+        "value": "eastus"
+      },
+      "modelCapacity": {
+        "type": "Int",
+        "value": 140
+      },
+      "modelFormat": {
+        "type": "String",
+        "value": "OpenAI"
+      },
+      "modelLocation": {
+        "type": "String",
+        "value": "eastus"
+      },
+      "modelName": {
+        "type": "String",
+        "value": "gpt-4o"
+      },
+      "modelSkuName": {
+        "type": "String",
+        "value": "GlobalStandard"
+      },
+      "modelVersion": {
+        "type": "String",
+        "value": "2024-11-20"
+      },
+      "storageName": {
+        "type": "String",
+        "value": "agentservicestorage"
+      },
+      "tags": {
+        "type": "Object",
+        "value": {}
+      }
+    },
+    "parametersLink": null,
+    "providers": [
+      {
+        "id": null,
+        "namespace": "Microsoft.Resources",
+        "providerAuthorizationConsentState": null,
+        "registrationPolicy": null,
+        "registrationState": null,
+        "resourceTypes": [
+          {
+            "aliases": null,
+            "apiProfiles": null,
+            "apiVersions": null,
+            "capabilities": null,
+            "defaultApiVersion": null,
+            "locationMappings": null,
+            "locations": [
+              null
+            ],
+            "properties": null,
+            "resourceType": "deployments",
+            "zoneMappings": null
+          }
+        ]
+      }
+    ],
+    "provisioningState": "Succeeded",
+    "templateHash": "14775524142171049844",
+    "templateLink": null,
+    "timestamp": "2025-05-27T19:08:00.422829+00:00",
+    "validatedResources": null
+  },
+  "resourceGroup": "AI-Foundry-Test",
+  "tags": null,
+  "type": "Microsoft.Resources/deployments"
+}
