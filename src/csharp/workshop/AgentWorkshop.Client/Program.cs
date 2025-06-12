@@ -13,5 +13,8 @@ string projectConnectionString = configuration.GetConnectionString("AiAgentServi
 
 AIProjectClient projectClient = new(projectConnectionString, new DefaultAzureCredential());
 
-await using AIAgent agent = new CodeInterpreter(projectClient, apiDeploymentName);
+// Each one changes the instructions and adds a tool
+await using AIAgent agent = new FunctionCall(projectClient, apiDeploymentName);
+// FileSearch
+// CodeInterpreter
 await agent.RunAsync();
